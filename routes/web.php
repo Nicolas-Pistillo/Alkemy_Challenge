@@ -20,6 +20,8 @@ Route::get('/', function () {
 
 Route::get('/register', [RegisterController::class,'index'])->name('register');
 
+Route::post('/register',[RegisterController::class,"store"])->name('register.store');
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
