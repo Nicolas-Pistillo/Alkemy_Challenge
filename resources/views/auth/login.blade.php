@@ -6,10 +6,13 @@
         <div class="w-full md:w-1/2 flex flex-col bg-b">
 
             <div class="flex justify-center md:justify-start pt-12 md:pl-12 md:-mb-24">
-                <a href="{{route('home')}}" class="brand-login font-bold text-4xl cursor-pointer transition duration-300 ease-in-out">MyAppStore</a>
+                <a href="{{route('home')}}" class="brand-login font-bold text-4xl text-blue-600 cursor-pointer"
+                ><span class="material-icons">
+                    subdirectory_arrow_left
+                </span> Home</a>
             </div>
 
-            <div class="flex flex-col justify-center md:justify-start my-auto pt-8 md:pt-0 px-8 md:px-24 lg:px-32">
+            <div class="flex flex-col justify-center md:justify-start my-auto pt-8 md:pt-0 px-8 md:px-8 lg:px-32">
                 <p class="text-center text-3xl">Bienvenido nuevamente, por favor, ingrese sus credenciales</p>
 
                 @if (session('status'))
