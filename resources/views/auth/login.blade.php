@@ -1,12 +1,12 @@
 <x-guest-layout>
         
-    <div class="w-full flex flex-wrap">
+    <div class="main-login w-full flex flex-wrap">
 
         <!-- Login Section -->
-        <div class="w-full md:w-1/2 flex flex-col">
+        <div class="w-full md:w-1/2 flex flex-col bg-b">
 
             <div class="flex justify-center md:justify-start pt-12 md:pl-12 md:-mb-24">
-                <a href="{{route('home')}}" class="text-black font-bold text-4xl cursor-pointer transition duration-300 ease-in-out hover:text-blue-600">MyAppStore</a>
+                <a href="{{route('home')}}" class="brand-login font-bold text-4xl cursor-pointer transition duration-300 ease-in-out">MyAppStore</a>
             </div>
 
             <div class="flex flex-col justify-center md:justify-start my-auto pt-8 md:pt-0 px-8 md:px-24 lg:px-32">
@@ -29,11 +29,13 @@
     
                     <div class="flex flex-col pt-4">
                         <label for="password" class="text-lg">Contraseña</label>
-                        <input type="password" name="password" id="password" placeholder="******" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline" required autocomplete="current-password">
+                        <input type="password" name="password" id="password" placeholder="Tucontraseña.123" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline" required autocomplete="current-password">
                     </div>
     
                     <input type="submit" value="Iniciar sesion" class="bg-blue-500 rounded-md w-40 mx-auto text-white font-bold text-lg transition duration-300 ease-in-out hover:bg-blue-600 p-2 mt-8 cursor-pointer">
                 </form>
+
+                <a href="{{route('register')}}" class="mx-auto mt-3 duration-300 ease-in-out hover:text-blue-600">¿Aun no estas registrado?</a>
 
                 <x-jet-validation-errors class="mt-3"/>
             </div>

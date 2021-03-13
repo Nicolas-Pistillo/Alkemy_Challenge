@@ -1,0 +1,64 @@
+// WELCOME - HEADER
+
+.main-hdr {
+    background-image: linear-gradient(to left, hsla(0, 83%, 36%, 0.266),hsla(135, 70%, 46%, 0.241)),url('../img/home/img-main-header.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    .arrow-hdr {
+        font-size: 2.2rem;
+        animation: arrowMove 1s infinite linear;
+    }
+}
+
+@keyframes arrowMove {
+    from {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-1rem);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+// WELCOME - SECTION
+
+.welcome-section {
+    background-color: #121212;
+    .about-info-section, .about-img-section {
+        height: 35rem;
+    }
+
+    .about-img-section {
+        clip-path: polygon(0 0, 100% 0%, 78% 100%, 0% 100%);
+    }
+
+    &:nth-child(2) {
+        .about-img-section {
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 24% 100%);
+        }
+    }
+
+    &:nth-child(3) {
+        .about-img-section > img {
+            object-position: left;
+        }
+    }
+}
+
+// LOGIN 
+
+.main-login {
+    background-color: #121212;
+    color: #fff;
+    .brand-login:hover {
+        background-image: linear-gradient(to left, hsla(0, 85%, 46%, 0.766),hsla(135, 79%, 45%, 0.741));
+        color: transparent;
+        -webkit-background-clip: text;
+    }
+}
