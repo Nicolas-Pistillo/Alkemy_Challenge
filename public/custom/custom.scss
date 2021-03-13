@@ -1,5 +1,7 @@
 // WELCOME - HEADER
 
+$color_dark: #121212;
+
 .main-hdr {
     background-image: linear-gradient(to left, hsla(0, 83%, 36%, 0.266),hsla(135, 70%, 46%, 0.241)),url('../img/home/img-main-header.jpg');
     background-size: cover;
@@ -29,7 +31,7 @@
 // WELCOME - SECTION
 
 .welcome-section {
-    background-color: #121212;
+    background-color: $color_dark;
     .about-info-section, .about-img-section {
         height: 35rem;
     }
@@ -54,11 +56,15 @@
 // LOGIN 
 
 .main-login {
-    background-color: #121212;
+    background-color: $color_dark;
     color: #fff;
-    .brand-login:hover {
-        background-image: linear-gradient(to left, hsla(0, 85%, 46%, 0.766),hsla(135, 79%, 45%, 0.741));
-        color: transparent;
-        -webkit-background-clip: text;
-    }
+}
+
+// REGISTER 
+
+.register-container {
+    background-image: url(../img/home/img-main-header.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
