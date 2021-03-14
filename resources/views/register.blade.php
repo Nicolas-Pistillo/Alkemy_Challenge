@@ -8,6 +8,7 @@
                 </div>
                 <div class="w-full md:w-1/2 py-10 px-5 md:px-10">
                     <div class="text-center mb-10">
+                        <img src="{{asset('img/app-favicon.png')}}" alt="img-logo">
                         <h1 class="font-bold text-3xl text-gray-900">Registro</h1>
                         <p>Estas a punto de unirte a la fiesta!</p>
                     </div>
@@ -20,14 +21,14 @@
                                 <label for="name" class="text-xs font-semibold px-1">Nombre</label>
                                 <div class="flex">
                                     <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-account-outline text-gray-400 text-lg"></i></div>
-                                    <input type="text" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500" name="name" id="name" autofocus required value="{{old('name')}}" placeholder="Mi nombre">
+                                    <input type="text" class="w-full -ml-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500" name="name" id="name" autofocus required value="{{old('name')}}" placeholder="Mi nombre">
                                 </div>
                             </div>
                             <div class="w-1/2 px-3 mb-5">
                                 <label for="surname" class="text-xs font-semibold px-1">Apellido</label>
                                 <div class="flex">
                                     <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-account-outline text-gray-400 text-lg"></i></div>
-                                    <input type="text" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500" value="{{old('surname')}}" name="surname" id="surname" placeholder="Mi apellido">
+                                    <input type="text" class="w-full -ml-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500" value="{{old('surname')}}" name="surname" id="surname" placeholder="Mi apellido">
                                 </div>
                             </div>
                         </div>
@@ -36,7 +37,16 @@
                                 <label for="email" class="text-xs font-semibold px-1">Email</label>
                                 <div class="flex">
                                     <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-email-outline text-gray-400 text-lg"></i></div>
-                                    <input type="email" value="{{old('email')}}" name="email" id="email" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500" placeholder="micorreo@gmail.com">
+                                    <input type="email" value="{{old('email')}}" name="email" id="email" class="w-full -ml-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500" placeholder="micorreo@gmail.com">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex -mx-3">
+                            <div class="w-full px-3 mb-5">
+                                <label for="alias" class="text-xs font-semibold px-1">Crea tu alias</label>
+                                <div class="flex">
+                                    <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-email-outline text-gray-400 text-lg"></i></div>
+                                    <input type="text" value="{{old('alias')}}" name="alias" id="alias" class="w-full -ml-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500" placeholder="Superman_278">
                                 </div>
                             </div>
                         </div>
@@ -54,7 +64,7 @@
                                 <label for="password" class="text-xs font-semibold px-1">Crea tu contraseña</label>
                                 <div class="flex">
                                     <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-lock-outline text-gray-400 text-lg"></i></div>
-                                    <input type="password" name="password" id="password" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500" placeholder="TOP SECRET">
+                                    <input type="password" name="password" id="password" class="w-full -ml-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500" placeholder="TOP SECRET">
                                 </div>
                             </div>
 
@@ -62,7 +72,7 @@
                                 <label for="password2" class="text-xs font-semibold px-1">Repite tu contraseña</label>
                                 <div class="flex">
                                     <div class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center"><i class="mdi mdi-lock-outline text-gray-400 text-lg"></i></div>
-                                    <input type="password" name="password_confirmation" id="password2" class="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500" placeholder="TOP SECRET">
+                                    <input type="password" name="password_confirmation" id="password2" class="w-full -ml-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500" placeholder="TOP SECRET">
                                 </div>
                             </div>
                         </div>
@@ -72,7 +82,7 @@
 
                                 <a href="{{route('login')}}">¿Ya estas registrado?</a>
                             </div>
-                            <x-jet-validation-errors class="mb-4" />
+                            <x-jet-validation-errors class="mb-4 text-center w-full" />
                         </div>
                     </div>
                 </div>
