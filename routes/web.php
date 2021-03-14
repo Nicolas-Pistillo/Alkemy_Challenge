@@ -22,6 +22,20 @@ Route::get('/register', [RegisterController::class,'index'])->name('register');
 
 Route::post('/register',[RegisterController::class,"store"])->name('register.store');
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
+Route::middleware(['auth:sanctum', 'verified'])->group(function() {
+
+    Route::prefix('user')->group(function() {
+
+        // Rutas para usuarios DEV
+        Route::get('/dashboard', function () {
+            return view('dev.dashboard');
+        })->middleware('devRoute')->name('dashboard');
+
+        // Rutas para usuarios Cliente
+        Route::get('/myapps', function() {
+            return view('client.myapps');
+        })->middleware('clientRoute')->name('myapps');
+
+    });
+
+});
