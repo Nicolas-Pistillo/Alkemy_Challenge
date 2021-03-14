@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AppDevelopController;
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
 
@@ -27,9 +29,13 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function() {
     Route::prefix('user')->group(function() {
 
         // Rutas para usuarios DEV
-        Route::get('/dashboard', function () {
-            return view('dev.dashboard');
-        })->middleware('devRoute')->name('dashboard');
+        Route::middleware('devRoute')->group(function() {
+            
+            Route::get('/dashboard', [DashboardController::class,"index"])->name('dashboard');
+
+            //Route::resource('user', [AppDevelopController::class]);
+
+        });
 
         // Rutas para usuarios Cliente
         Route::get('/myapps', function() {

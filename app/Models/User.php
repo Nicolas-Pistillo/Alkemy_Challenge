@@ -9,6 +9,7 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Sanctum\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
+use App\Models\Application;
 
 class User extends Authenticatable
 {
@@ -26,9 +27,14 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'surname',
+        'alias',
         'email',
         'password',
     ];
+
+    public function hasApps() {
+        return $this->hasMany(Application::class,'created_by');
+    }
 
     /**
      * The attributes that should be hidden for arrays.
