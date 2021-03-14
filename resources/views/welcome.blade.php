@@ -24,7 +24,7 @@
 
                 <div class="about-info-txt w-3/4">
                     <h2 class="text-4xl mb-3">Somos amantes de las ultimas tecnologias</h2>
-                    <p class="text-lg">Ofrecemos un servicio de venta/creacion de aplicaciones de primera calidad para ofrecerte una experiencia inolvidable</p>
+                    <p class="text-lg">Ofrecemos un servicio de venta y publicacion de aplicaciones de primera calidad para ofrecerte una experiencia inolvidable</p>
                 </div>
             </div>
         </section>
