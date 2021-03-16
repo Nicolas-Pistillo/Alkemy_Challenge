@@ -31,7 +31,7 @@
 
         <section class="welcome-section grid grid-cols-2">
             <div class="about-img-section order-2">
-                <img src="{{asset('img/home/apps-3.jpg')}}" alt="section-img-1" class="w-full h-full object-cover">
+                <img src="{{asset('img/home/apps-2.jpg')}}" alt="section-img-1" class="w-full h-full object-cover">
             </div>
 
             <div class="about-info-section flex flex-col justify-center items-center text-white text-center">
@@ -45,7 +45,7 @@
 
         <section class="welcome-section grid grid-cols-2">
             <div class="about-img-section">
-                <img src="{{asset('img/home/apps-2.jpg')}}" alt="section-img-1" class="w-full h-full object-cover">
+                <img src="{{asset('img/home/apps-3.jpg')}}" alt="section-img-1" class="w-full h-full object-cover">
             </div>
 
             <div class="about-info-section flex flex-col justify-center items-center text-white text-center">
