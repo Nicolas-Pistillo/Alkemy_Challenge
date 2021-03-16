@@ -15,11 +15,11 @@ class Application extends Model
         'category',
         'description',
         'price',
-        'logo_url',
-        'created_by'
+        'created_by',
+        'logo_url'
     ];
 
-    public function getDevCreator() {
-        return $this->hasMany(User::class,'id');
+    public function developer() {
+        return $this->belongsTo(User::class,'created_by');
     }
 }

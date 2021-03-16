@@ -32,7 +32,7 @@ class User extends Authenticatable
         'password',
     ];
 
-    public function hasApps() {
+    public function apps() {
         return $this->hasMany(Application::class,'created_by');
     }
 

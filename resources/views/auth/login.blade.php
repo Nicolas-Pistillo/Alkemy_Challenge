@@ -1,6 +1,6 @@
 <x-guest-layout>
         
-    <div class="main-login w-full flex flex-wrap">
+    <div class="main-login w-full flex flex-wrap overflow-hidden">
 
         <!-- Login Section -->
         <div class="w-full md:w-1/2 flex flex-col bg-b">
@@ -12,7 +12,7 @@
                 </span> Home</a>
             </div>
 
-            <div class="flex flex-col animate__animated animate__flipInX justify-center md:justify-start my-auto pt-8 md:pt-0 px-8 md:px-8 lg:px-32">
+            <div class="flex flex-col animate__animated animate__fadeInUp justify-center md:justify-start my-auto pt-8 md:pt-0 px-8 md:px-8 lg:px-32">
                 <p class="text-center text-3xl">Bienvenido nuevamente, por favor, ingrese sus credenciales</p>
 
                 @if (session('status'))
@@ -46,7 +46,7 @@
         </div>
 
         <!-- Image Section -->
-        <div class="w-1/2 shadow-2xl animate__animated animate__fadeInDownBig">
+        <div class="w-1/2 shadow-2xl">
             <img class="object-cover w-full h-screen hidden md:block" src="{{asset('img/login/man-img-login.jpg')}}">
         </div>
     </div>
