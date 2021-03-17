@@ -27,6 +27,10 @@
                         <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                             Dashboard
                         </x-jet-nav-link>
+
+                        <x-jet-nav-link href="{{ route('development.index') }}" :active="request()->routeIs('development.index')">
+                            Crear App
+                        </x-jet-nav-link>
                     @endcan
 
                     @can('list_apps')
@@ -111,6 +115,10 @@
             @can('create_app')
                 <x-jet-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                     Dashboard
+                </x-jet-responsive-nav-link>
+
+                <x-jet-responsive-nav-link href="{{ route('development.index') }}" :active="request()->routeIs('development.index')">
+                    Crear App
                 </x-jet-responsive-nav-link>
             @endcan
 
