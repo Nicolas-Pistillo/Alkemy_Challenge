@@ -3,10 +3,10 @@
     <div class="main-login w-full flex flex-wrap overflow-hidden">
 
         <!-- Login Section -->
-        <div class="w-full md:w-1/2 flex flex-col bg-b">
+        <div class="w-full login-form-container md:w-1/2 flex flex-col bg-b">
 
             <div class="flex justify-center md:justify-start pt-12 md:pl-12 md:-mb-24">
-                <a href="{{route('home')}}" class="brand-login font-bold text-4xl text-blue-600 cursor-pointer"
+                <a href="{{route('home')}}" class="brand-login font-bold text-4xl text-white cursor-pointer"
                 ><span class="material-icons">
                     subdirectory_arrow_left
                 </span> Home</a>
@@ -38,7 +38,7 @@
                     <input type="submit" value="Iniciar sesion" class="bg-blue-500 rounded-md w-40 mx-auto text-white font-bold text-lg transition duration-300 ease-in-out hover:bg-blue-600 p-2 mt-8 cursor-pointer">
                 </form>
 
-                <a href="{{route('register')}}" class="mx-auto mt-3 duration-300 ease-in-out hover:text-blue-600">¿Aun no estas registrado?</a>
+                <a href="{{route('register')}}" class="mx-auto mt-3 duration-300 ease-in-out hover:underline">¿Aun no estas registrado?</a>
 
                 <x-jet-validation-errors class="mt-3"/>
             </div>

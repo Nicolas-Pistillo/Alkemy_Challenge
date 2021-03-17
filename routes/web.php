@@ -1,9 +1,9 @@
 <?php
 
-use App\Http\Controllers\AppDevelopController;
 use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\DevelopmentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,14 +26,16 @@ Route::post('/register',[RegisterController::class,"store"])->name('register.sto
 
 Route::middleware(['auth:sanctum', 'verified'])->group(function() {
 
-    Route::prefix('user')->group(function() {
+    Route::prefix('me')->group(function() {
 
         // Rutas para usuarios DEV
         Route::middleware('devRoute')->group(function() {
             
             Route::get('/dashboard', [DashboardController::class,"index"])->name('dashboard');
 
-            //Route::resource('user', [AppDevelopController::class]);
+            Route::get('/development', [DevelopmentController::class,"index"])->name('development.index');
+
+            Route::post('/development', [DevelopmentController::class,"store"])->name('development.store');
 
         });
 
