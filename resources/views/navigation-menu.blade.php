@@ -35,7 +35,11 @@
 
                     @can('list_apps')
                         <x-jet-nav-link href="{{route('myapps')}}" :active="request()->routeIs('myapps')">
-                            Lista de apps
+                            Mi coleccion
+                        </x-jet-nav-link>
+
+                        <x-jet-nav-link href="{{route('shop.index')}}" :active="request()->routeIs('shop.index')">
+                            Tienda
                         </x-jet-nav-link>
                     @endcan
                 </div>
@@ -124,7 +128,11 @@
 
             @can('list_apps')
                 <x-jet-responsive-nav-link href="{{ route('myapps') }}" :active="request()->routeIs('myapps')">
-                    Mis apps
+                    Mi coleccion
+                </x-jet-responsive-nav-link>
+
+                <x-jet-responsive-nav-link href="{{ route('shop.index') }}" :active="request()->routeIs('shop.index')">
+                    Tienda
                 </x-jet-responsive-nav-link>
             @endcan
                 

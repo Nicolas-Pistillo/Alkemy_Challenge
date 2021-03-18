@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\NewAppRequest;
 use App\Models\Application;
 use App\Models\Category;
 use Illuminate\Http\Request;
@@ -16,24 +17,24 @@ class DevelopmentController extends Controller
         return view('dev.create_app',compact('categories'));
     }
 
-    public function store(Request $req) {
+    public function store(NewAppRequest $newApp) {
 
-        /* Prueba con imagenes
-        $imagen = $req->file('app-img')->store('public/apps_img');
+        $dev_id = auth()->user()->id;
+
+        $imagen = $newApp->file('app-img')->store('public/apps_img');
 
         $url = Storage::url($imagen);
 
-        Application::create([
-            'name' => 'Prueba nueva',
-            'category' => 'Categoria prueba',
-            'description' => 'Description prueba',
-            'price' => 1750,
-            'created_by' => 1,
-            'logo_url' => $url
+        $app_create = Application::create([
+            'name' => $newApp->name,
+            'description' => $newApp->description,
+            'price' => $newApp->price,
+            'logo_url' => $url,
+            'created_by' => $dev_id,
+            'category' => $newApp->category,
         ]);
 
-        return redirect()->route('dashboard');*/
-
+        return redirect()->route('development.index')->with('created_ok','nomessage');
 
     }
 }

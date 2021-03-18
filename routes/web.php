@@ -1,9 +1,12 @@
 <?php
 
+use App\Http\Controllers\AppsCollectionController;
 use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DevelopmentController;
+use App\Http\Controllers\ShopController;
+use App\Models\Application;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,9 +43,12 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function() {
         });
 
         // Rutas para usuarios Cliente
-        Route::get('/myapps', function() {
-            return view('client.myapps');
-        })->middleware('clientRoute')->name('myapps');
+        Route::middleware('clientRoute')->group(function() {
+
+            Route::get('/myapps', [AppsCollectionController::class,"index"])->name('myapps');
+
+            Route::get('/shop',[ShopController::class,"index"])->name('shop.index');
+        });
 
     });
 

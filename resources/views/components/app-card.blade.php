@@ -1,19 +1,21 @@
-<!-- component -->
-
-    <div class="flex-shrink-0 m-6 relative overflow-hidden bg-purple-500 rounded-lg max-w-xs shadow-lg">
-        <svg class="absolute bottom-0 left-0 mb-8" viewBox="0 0 375 283" fill="none" style="transform: scale(1.5); opacity: 0.1;">
-            <rect x="159.52" y="175" width="152" height="152" rx="8" transform="rotate(-45 159.52 175)" fill="white"/>
-            <rect y="107.48" width="152" height="152" rx="8" transform="rotate(-45 0 107.48)" fill="white"/>
-        </svg>
-        <div class="relative flex items-center justify-center">
-            <div class="block absolute w-48 h-48 bottom-0 left-0 -mb-24 ml-3" style="background: radial-gradient(black, transparent 60%); transform: rotate3d(0, 0, 1, 20deg) scale3d(1, 0.6, 1); opacity: 0.2;"></div>
-            <img class="relative w-full rounded-md" src="{{asset('img/home/img-main-header.jpg')}}" alt="img-info">
+<div class="app-dev-card shadow-lg group container m-4 rounded-md bg-white max-w-sm flex justify-center items-center hover:shadow-xl">
+    <div>
+        <div class="w-full h-48 rounded-t-md object-cover" >
+            <img class="w-full h-full rounded-t-md" src="{{$img}}" alt="{{$name}}-img">
         </div>
-        <div class="relative text-white px-6 pb-6 mt-6">
-            <span class="block opacity-75 -mb-1">{{$category}}</span>
-            <div class="flex justify-between">
-                <span class="block font-semibold text-xl">{{$name}}</span>
-                <span class="block bg-white rounded-full text-purple-500 text-xs font-bold px-3 py-2 leading-none flex items-center">${{$price}}</span>
-            </div>
+        <div class="py-8 px-4 bg-white text-center rounded-b-md">
+            <h3 class="text-xl mb-3 text-gray-800 font-bold tracking-wide">{{$name}}</h3>
+            <p class="card-dev-description text-gray-600 text-lg mb-4">{{$category}} 
+            </p>
+
+            @can('edit_app')
+                <a href="#" class="bg-blue-500 w-full rounded-md font-bold text-white text-center px-4 py-3 transition duration-300 ease-in-out hover:bg-blue-600">Editar</a>
+            @endcan
+
+            @can('show_app')
+                <a href="#" class="bg-blue-500 w-full rounded-md font-bold text-white text-center px-4 py-3 transition duration-300 ease-in-out hover:bg-blue-600">Ver Detalles</a>
+            @endcan
+
         </div>
     </div>
+</div>

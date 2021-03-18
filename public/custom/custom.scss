@@ -70,3 +70,15 @@ $color_dark: #121212;
     background-position: center;
     background-repeat: no-repeat;
 }
+
+// APP CARD
+
+.app-dev-card {
+    transition: all .3s ease;
+    &:hover {
+        transform: translateY(-5px);
+    }
+    .card-dev-description {
+        overflow-wrap: anywhere;
+    }
+}
