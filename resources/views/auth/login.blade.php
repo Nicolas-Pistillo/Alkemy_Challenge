@@ -6,7 +6,7 @@
         <div class="w-full login-form-container md:w-1/2 flex flex-col bg-b">
 
             <div class="flex justify-center md:justify-start pt-12 md:pl-12 md:-mb-24">
-                <a href="{{route('home')}}" class="brand-login font-bold text-4xl text-white cursor-pointer"
+                <a href="{{route('home')}}" class="brand-login font-bold text-4xl text-blue-500 cursor-pointer"
                 ><span class="material-icons">
                     subdirectory_arrow_left
                 </span> Home</a>
@@ -35,7 +35,7 @@
                         <input type="password" name="password" id="password" placeholder="Tucontraseña.123" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline" required autocomplete="current-password">
                     </div>
     
-                    <input type="submit" value="Iniciar sesion" class="bg-blue-500 rounded-md w-40 mx-auto text-white font-bold text-lg transition duration-300 ease-in-out hover:bg-blue-600 p-2 mt-8 cursor-pointer">
+                    <input type="submit" value="Iniciar sesion" class="bg-blue-500 outline-none rounded-md w-40 mx-auto text-white font-bold text-lg transition duration-300 ease-in-out hover:bg-blue-600 p-2 mt-8 cursor-pointer">
                 </form>
 
                 <a href="{{route('register')}}" class="mx-auto mt-3 duration-300 ease-in-out hover:underline">¿Aun no estas registrado?</a>

@@ -3,18 +3,22 @@
 namespace App\Http\Controllers;
 
 use App\Models\Application;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
 class DevelopmentController extends Controller
 {
-    public function index() {
-        return view('dev.create_app');
+    public function index(Category $categories) {
+
+        $categories = $categories->all();
+
+        return view('dev.create_app',compact('categories'));
     }
 
     public function store(Request $req) {
 
-        // Prueba con imagenes
+        /* Prueba con imagenes
         $imagen = $req->file('app-img')->store('public/apps_img');
 
         $url = Storage::url($imagen);
@@ -28,6 +32,8 @@ class DevelopmentController extends Controller
             'logo_url' => $url
         ]);
 
-        return redirect()->route('dashboard');
+        return redirect()->route('dashboard');*/
+
+
     }
 }

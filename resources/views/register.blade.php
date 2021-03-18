@@ -1,6 +1,9 @@
 <x-guest-layout>
     
     <div class="register-container min-w-screen min-h-screen bg-gray-900 flex items-center justify-center px-5 py-5">
+
+        @if (!isset($succesUser))
+
         <div class="bg-gray-100 animate__animated animate__zoomInUp text-gray-500 rounded-3xl shadow-xl w-full overflow-hidden" style="max-width:1000px">
             <div class="md:flex w-full">
                 <div class="hidden md:block w-1/2 bg-indigo-500">
@@ -80,7 +83,7 @@
                             <div class="w-full px-3 mb-5 text-center">
                                 <button type="submit" class="block w-full max-w-xs mx-auto bg-blue-500 hover:bg-blue-600 transition duration-300 ease-in-out text-white rounded-lg px-3 py-3 font-semibold mb-3">Dar de alta</button>
 
-                                <a href="{{route('login')}}">¿Ya estas registrado?</a>
+                                <a href="{{route('login')}}" class="hover:underline">¿Ya estas registrado?</a>
                             </div>
                             <x-jet-validation-errors class="mb-4 text-center w-full" />
                         </div>
@@ -88,6 +91,27 @@
                 </div>
             </div>
         </div>
+
+        @else
+
+        <div class="succes-user-container animate__animated animate__jackInTheBox w-72 text-center bg-white shadow-xl rounded-xl p-8">
+            <span class="material-icons text-white mb-3 p-1 bg-green-700 rounded-full">
+                done
+            </span>
+
+            <div class="text-green-700">
+                <h3 class="font-bold text-2xl mb-3">¡Te has registrado con éxito, {{$succesUser->name}}!</h3>
+
+                <p class="text-black mb-3">Ya puedes iniciar sesión con tus datos, esperamos que disfrutes de nuestros servicios.</p>
+
+                <a href="{{route('login')}}" class="block w-full max-w-xs mx-auto bg-blue-500 hover:bg-blue-600 transition duration-300 ease-in-out text-white rounded-lg px-3 py-3 font-semibold">¡Comenzemos!</a>
+            </div>
+        </div>
+        
+
+        @endif
+
+
     </div>
 
 </x-guest-layout>

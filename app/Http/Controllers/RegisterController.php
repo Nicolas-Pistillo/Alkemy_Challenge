@@ -13,12 +13,12 @@ class RegisterController extends Controller
         return view('register');
     }
 
-    public function store(RegisterNewUser $new_user) {
-        $role = $new_user->type_user;
+    public function store(RegisterNewUser $succesUser) {
+        $role = $succesUser->type_user;
 
-        $new_user = User::create($new_user->all());
-        $new_user->assignRole($role);
+        $succesUser = User::create($succesUser->all());
+        $succesUser->assignRole($role);
 
-        return $new_user;
+        return view('register',compact('succesUser'));
     }
 }
