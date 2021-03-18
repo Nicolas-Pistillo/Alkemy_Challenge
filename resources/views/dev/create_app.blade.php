@@ -31,9 +31,9 @@
                         <label for="category" class="leading-loose">Categoria</label>
                         <select name="category" id="category" class="rounded-md border-gray-300">
                             <option value="">Selecciona una categoria</option>
-                            <option value="">1</option>
-                            <option value="">2</option>
-                            <option value="">3</option>
+                            @foreach ($categories as $category)
+                                <option value="{{$category->id}}">{{$category->name}}</option>
+                            @endforeach
                         </select>
                     </div>
                     

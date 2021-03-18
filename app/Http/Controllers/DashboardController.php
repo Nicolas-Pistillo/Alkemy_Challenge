@@ -11,12 +11,14 @@ use Illuminate\Http\Request;
 class DashboardController extends Controller
 {
 
-    public function index(Application $app) {
+    public function index() {
 
         // Obtener usuarios que tengan apps $appsDev = $dev::with('apps')->get();
 
-        $appsDev = auth()->user()->apps;
+        $dev = auth()->user();
 
-        return view('dev.dashboard',compact('appsDev'));
+        $appsDev = $dev->apps;
+
+        return view('dev.dashboard',compact('appsDev','dev'));
     }
 }

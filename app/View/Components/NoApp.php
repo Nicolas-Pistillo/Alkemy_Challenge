@@ -11,9 +11,12 @@ class NoApp extends Component
      *
      * @return void
      */
-    public function __construct()
+
+    public $name;
+
+    public function __construct($name)
     {
-        //
+        $this->name = $name;
     }
 
     /**
