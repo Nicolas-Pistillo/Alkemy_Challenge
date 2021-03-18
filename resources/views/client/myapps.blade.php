@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+        <h2 class="animate__animated animate__fadeIn font-semibold text-xl text-gray-800 leading-tight">
             Mis apps
         </h2>
     </x-slot>

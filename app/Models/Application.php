@@ -13,13 +13,17 @@ class Application extends Model
     protected $fillable = [
         'name',
         'category',
-        'description',
         'price',
-        'created_by',
-        'logo_url'
+        'description',
+        'logo_url',
+        'created_by'
     ];
 
     public function developer() {
         return $this->belongsTo(User::class,'created_by');
+    }
+
+    public function getCategory() {
+        return $this->belongsTo(Category::class,'category');
     }
 }

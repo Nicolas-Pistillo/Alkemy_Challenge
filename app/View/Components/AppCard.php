@@ -15,12 +15,16 @@ class AppCard extends Component
     public $name;
     public $category;
     public $price;
+    public $img;
+    public $description;
 
-    public function __construct($name,$category,$price)
+    public function __construct($name,$category,$price,$img,$description)
     {
         $this->name = $name;
         $this->category = $category;
         $this->price = $price;
+        $this->img = $img;
+        $this->description = $description;
     }
 
     /**
