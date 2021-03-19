@@ -40,6 +40,12 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function() {
 
             Route::post('/development', [DevelopmentController::class,"store"])->name('development.store');
 
+            Route::get('/development/{id}', [DevelopmentController::class,"show"])->name('development.show');
+
+            Route::get('/development/{id}/edit', [DevelopmentController::class,"edit"])->name('development.edit');
+
+            Route::put('/development/{id}',[DevelopmentController::class,"update"])->name('development.update');
+
         });
 
         // Rutas para usuarios Cliente
@@ -53,3 +59,6 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function() {
     });
 
 });
+
+
+
