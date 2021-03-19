@@ -31,6 +31,7 @@
                         <x-jet-nav-link href="{{ route('development.index') }}" :active="request()->routeIs('development.index')">
                             Crear App
                         </x-jet-nav-link>
+
                     @endcan
 
                     @can('list_apps')

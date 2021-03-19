@@ -17,7 +17,7 @@
                     <img src="{{asset('img/create_app.png')}}" alt="img-logo" class=" w-full h-full">
                 </div>
                 <div class="block pl-2 font-semibold text-xl self-start text-gray-700">
-                    <h2 class="leading-relaxed">Estas creando tu aplicacion</h2>
+                    <h2 class="leading-relaxed">Estas creando una aplicación</h2>
                     <p class="text-sm text-gray-500 font-normal leading-relaxed">Deja que tu imaginacion se divierta.</p>
                 </div>
             </div>

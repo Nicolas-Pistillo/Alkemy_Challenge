@@ -6,9 +6,14 @@
     </x-slot>
 
             @if (isset($appsDev[0]))
-                <div class="p-24 flex flex-wrap items-center justify-center">
+                <div class="p-24 animate__animated animate__fadeIn flex flex-wrap items-center justify-center">
                     @foreach ($appsDev as $app)
-                        <x-app-card :name="$app->name" :category="$app->getCategory->name" :price="$app->price" :img="$app->logo_url" :description="$app->description" />
+                        <x-card-dev :name="$app->name" 
+                            :category="$app->getCategory->name" 
+                            :price="$app->price" 
+                            :img="$app->logo_url" 
+                            :description="$app->description" 
+                            :id="$app->id" />
                     @endforeach
                 </div>
             @else
