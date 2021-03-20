@@ -19,10 +19,6 @@
                 <a href="{{route('development.show', "$id")}}" class="bg-blue-500 block w-1/2 mx-auto rounded-md font-bold text-white text-center px-4 py-3 transition duration-300 ease-in-out hover:bg-blue-600">Ver Datos</a>
             @endcan
 
-            @can('show_app')
-                <a href="#" class="bg-blue-500 block w-1/2 mx-auto rounded-md font-bold text-white text-center px-4 py-3 transition duration-300 ease-in-out hover:bg-blue-600">Ver Detalle</a>
-            @endcan
-
         </div>
     </div>
 </div>

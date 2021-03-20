@@ -52,15 +52,19 @@ class DevelopmentController extends Controller
         return view('dev.app_dev_edit',compact('edit_app'));
     }
 
-    public function update(UpdateAppRequest $app, $edit_app) {
-        //$imagen = $updated_app->file('app-img')->store('public/apps_img');
+    public function update(UpdateAppRequest $app_update, $edit_app) {
+        $imagen = $app_update->file('app-img')->store('public/apps_img');
 
-        //$url = Storage::url($imagen);
-
-        //$id_app = $edit_app;
+        $url = Storage::url($imagen);
 
         $app_given = Application::where('id',$edit_app)->first();
 
-        return $app_given;
+        $app_given->price = $app_update->price;
+        $app_given->description = $app_update->description;
+        $app_given->logo_url = $url;
+
+        $app_given->save();
+
+        return redirect()->route("development.show","$edit_app")->with('updatedOK','updated');
     }
 }
