@@ -71,11 +71,19 @@ $color_dark: #121212;
     background-repeat: no-repeat;
 }
 
-// APP CARD
+// APP CARD DEV
 
 .app-dev-card {
     transition: all .3s ease;
     &:hover {
         transform: translateY(-5px);
     }
+}
+
+// SHOP CARDS
+
+.shop-card:hover{
+    transform: scale(1.1,1.1);
+    background-color: #222;
+    color: #fff;
 }

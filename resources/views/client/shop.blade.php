@@ -5,9 +5,15 @@
         </h2>
     </x-slot>
 
-    <div class="p-24 flex flex-wrap items-center justify-center">
+    <div class="p-24 flex flex-wrap items-center justify-center animate__animated animate__fadeIn">
         @foreach ($total_apps as $app)
-                <x-app-card :name="$app->name" :category="$app->getCategory->name" :price="$app->price" :img="$app->logo_url" :description="$app->description" />
+            <x-shop-card class="shop-card"
+                :name="$app->name"
+                :description="$app->description"
+                :category="$app->getCategory->name"
+                :price="$app->price"
+                :logo="$app->logo_url"
+            />
         @endforeach
     </div>
     

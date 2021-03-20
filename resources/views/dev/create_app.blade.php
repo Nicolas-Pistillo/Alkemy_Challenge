@@ -10,6 +10,13 @@
         @if (!session('created_ok'))
         
         <div class="relative py-10 sm:max-w-xl sm:mx-auto">
+
+            <x-alert tema="ADVERTENCIA" color="yellow" class="mb-4">
+                <slot>
+                    Una vez que tu aplicacion se haya dado de alta, no podras modificar su nombre y categoria
+                </slot>
+            </x-alert>
+
         <div class="relative px-4 py-10 bg-white mx-8 md:mx-0 shadow-xl rounded-3xl sm:p-10">
             <div class="max-w-md mx-auto">
             <div class="flex items-center space-x-5">

@@ -16,24 +16,6 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
 
-        Category::create([
-            'name' => 'Videojuegos'
-        ]);
-
-        Category::create([
-            'name' => 'Musica'
-        ]);
-
-        Category::create([
-            'name' => 'Deportes'
-        ]);
-
-        Category::create([
-            'name' => 'Accion'
-        ]);
-
-        Category::create([
-            'name' => 'Educacion'
-        ]);
+        $this->call(CategorySeeder::class);
     }
 }

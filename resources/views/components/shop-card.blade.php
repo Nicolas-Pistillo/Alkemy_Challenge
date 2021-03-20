@@ -6,9 +6,10 @@
     'logo'
 ])
 
-<div {{$attributes->merge(['class' => "max-w-xs rounded overflow-hidden shadow-lg my-2"])}}>
+<div {{$attributes->merge(['class' => "max-w-xs rounded overflow-hidden shadow-lg m-4 transition duration-300 cursor-pointer"])}}>
     <img class="w-full h-52 object-cover" src="{{$logo}}" alt="{{$name}}-img">
-    <div class="px-6 py-4">
+    
+    <div class="px-6 py-4 h-44 ove">
         <h3 class="font-bold text-xl mb-2">{{$name}}</h3>
         <p class="text-grey-darker text-base">
             {{$description}}
@@ -20,6 +21,6 @@
     </div>
 
     @can('show_app')
-    <a href="#" class="bg-blue-500 flex justify-center items-center w-full text-white px-4 py-3 transition duration-300 ease-in-out cursor-pointer hover:bg-blue-600">Comprar</a>
+        <a href="#" class="bg-blue-500 flex justify-center items-center w-full text-white px-4 py-3 transition duration-300 ease-in-out cursor-pointer hover:bg-blue-600">¡Me intereza!</a>
     @endcan
 </div>

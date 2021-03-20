@@ -5,6 +5,14 @@
         </h2>
     </x-slot>
 
+    @if (session('updatedOK'))
+        <x-alert tema="¡Actualizado con éxito!" color="green" class="max-w-2xl mx-auto mt-4">
+            <slot>
+                La aplicación {{$app_show->name}} ha sido actualizada satisfactoriamente.
+            <slot>
+        </x-alert>
+    @endif
+
     <div class="max-w-7xl mx-auto flex justify-around flex-wrap items-center py-6 px-4 sm:px-6 lg:px-8">
 
         <x-shop-card class="animate__animated animate__flipInX"
