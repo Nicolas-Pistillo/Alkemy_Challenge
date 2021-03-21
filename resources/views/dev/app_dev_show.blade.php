@@ -24,10 +24,19 @@
         />
 
         <div class="dev-app-actions">
-            <a href="{{route('development.edit',$app_show->id)}}" class="bg-green-500 w-36 block my-3 text-center text-white px-4 py-3 rounded-md transition duration-300 ease-in-out cursor-pointer hover:bg-green-600">Editar</a>
 
-            <a href="#" class="bg-red-500 w-36 block my-3 text-white text-center px-4 py-3 rounded-md transition duration-300 ease-in-out cursor-pointer hover:bg-red-600">Eliminar</a>
+            <a href="{{route('development.edit',$app_show)}}" class="bg-green-500 w-44 block my-3 text-center text-white px-4 py-3 rounded-md transition duration-300 ease-in-out cursor-pointer hover:bg-green-600" title="Editar">
+                <span class="material-icons">border_color</span> <br> Demosle unos retoques
+            </a>
 
+            <form action="{{route('development.destroy',$app_show)}}" method="post">
+                @method('delete')
+                @csrf
+    
+                <button type="submit" class="bg-red-500 w-44 block my-3 text-center text-white px-4 py-3 rounded-md transition duration-300 ease-in-out cursor-pointer hover:bg-red-600" title="Eliminar">
+                    <span class="material-icons">delete</span> <br> ¡Ya no me gusta!
+                </button>
+            </form>
         </div>
         
     </div>

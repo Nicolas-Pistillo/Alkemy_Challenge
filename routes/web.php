@@ -46,6 +46,10 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function() {
 
             Route::put('/development/{id}',[DevelopmentController::class,"update"])->name('development.update');
 
+            Route::delete('/development/{id}', [DevelopmentController::class,"destroy"])->name('development.destroy');
+
+            //Route::resource('development', [DevelopmentController::class]);
+
         });
 
         // Rutas para usuarios Cliente

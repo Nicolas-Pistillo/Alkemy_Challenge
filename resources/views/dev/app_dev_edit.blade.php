@@ -35,7 +35,7 @@
                         </div>
                         <div class="flex flex-col">
                                 <label for="app-img" class="leading-loose">Imagen para tu App</label>
-                                <input type='file' accept="img/*" name="app-img" id="app-img" />
+                                <input type='file' accept="img/*" value="{{$edit_app->logo_url}}" name="app-img" id="app-img"  />
                         </div>
                         
                     </div>
