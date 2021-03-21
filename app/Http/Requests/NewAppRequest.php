@@ -28,7 +28,7 @@ class NewAppRequest extends FormRequest
             'category' => 'required|not_in:0',
             'price' => 'required|integer',
             'app-img' => 'required|image',
-            'description' => 'required'
+            'description' => 'required|max:138'
         ];
     }
 
@@ -41,7 +41,8 @@ class NewAppRequest extends FormRequest
             'price.integer' => 'El precio debe tener un valor numerico',
             'app-img.required' => 'Tu aplicacion necesita un logo',
             'app-img.image' => 'No trates de subir un archivo que no sea una imagen, porfavor',
-            'description.required' => 'El campo descripcion no puede estar vacio'
+            'description.required' => 'El campo descripcion no puede estar vacio',
+            'description.max' => 'Has excedido el limite de caracteres en la descripcion'
         ];
     }
 }

@@ -67,4 +67,13 @@ class DevelopmentController extends Controller
 
         return redirect()->route("development.show","$edit_app")->with('updatedOK','updated');
     }
+
+    public function destroy($app) {
+
+        $delete_app = Application::where('id',$app)->first();
+
+        $delete_app->delete();
+
+        return redirect()->route('dashboard')->with('deleteOK','deleted');
+    }
 }

@@ -5,6 +5,14 @@
         </h2>
     </x-slot>
 
+            @if (session('deleteOK'))
+                <x-alert tema="Eliminado Correctamente" color="green" class="mt-4 max-w-sm mx-auto">
+                    <slot>
+                        Tu aplicacion se ha eliminado correctamente, ¡crea muchas otras mas!
+                    </slot>
+                </x-alert>
+            @endif
+
             @if (isset($appsDev[0]))
                 <div class="p-24 animate__animated animate__fadeIn flex flex-wrap items-center justify-center">
                     @foreach ($appsDev as $app)
