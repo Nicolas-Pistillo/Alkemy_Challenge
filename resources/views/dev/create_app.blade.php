@@ -11,12 +11,6 @@
         
         <div class="relative py-10 sm:max-w-xl sm:mx-auto">
 
-            <x-alert tema="ADVERTENCIA" color="yellow" class="mb-4">
-                <slot>
-                    Una vez que tu aplicacion se haya dado de alta, no podras modificar su nombre y categoria
-                </slot>
-            </x-alert>
-
         <div class="relative px-4 py-10 bg-white mx-8 md:mx-0 shadow-xl rounded-3xl sm:p-10">
             <div class="max-w-md mx-auto">
             <div class="flex items-center space-x-5">
@@ -36,11 +30,11 @@
                 @csrf
 
                 <div class="flex flex-col">
-                        <label for="name" class="leading-loose">Nombre</label>
-                        <input type="text" name="name" id="name" value="{{old('name')}}" class="px-4 py-2 border-gray-300 w-full sm:text-sm rounded-md" placeholder="Nombre de mi app">
+                        <label for="name" class="leading-loose">Nombre <small class="text-yellow-400">*No podras modificarlo mas adelante</small> </label>
+                        <input type="text" name="name" id="name" value="{{old('name')}}" class="px-4 py-2 border-gray-300 w-full rounded-md" placeholder="Nombre de mi app">
                     </div>
                     <div class="flex flex-col">
-                        <label for="category" class="leading-loose">Categoria</label>
+                        <label for="category" class="leading-loose">Categoria <small class="text-yellow-400">*No podras modificarla mas adelante</small> </label>
                         <select name="category" id="category" class="rounded-md border-gray-300">
                             <option value="">Selecciona una categoria</option>
                             @foreach ($categories as $category)
@@ -51,18 +45,11 @@
                     
                         <div class="flex flex-col">
                             <label for="price" class="leading-loose">Precio</label>
-                            <div class="relative focus-within:text-gray-600 text-gray-400">
-                                <input type="number" name="price" id="price" value="{{old('price')}}" class="px-4 py-2 border w-full sm:text-sm border-gray-300 rounded-md" placeholder="$$$">
+                            <div class="relative">
+                                <input type="number" name="price" id="price" value="{{old('price')}}" class="px-4 py-2 border w-full border-gray-300 rounded-md" placeholder="$$$">
                             </div>
                         </div>
                         <div class="flex flex-col">
-                            <!--<label class="flex flex-col items-center px-4 py-6 bg-blue-500  rounded-lg shadow-lg tracking-wide uppercase border border-blue transition duration-300 ease-in-out cursor-pointer hover:bg-blue-600 text-white">
-                                <svg class="w-8 h-8" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                                    <path d="M16.88 9.1A4 4 0 0 1 16 17H5a5 5 0 0 1-1-9.9V7a3 3 0 0 1 4.52-2.59A4.98 4.98 0 0 1 17 8c0 .38-.04.74-.12 1.1zM11 11h3l-4-4-4 4h3v3h2v-3z" />
-                                </svg>
-                                <span class="mt-2 text-base leading-normal">imagen de tu App</span>
-                                <input type='file' accept="img/*" class="hidden" />
-                            </label>-->
                             <label for="app-img" class="leading-loose">Imagen para tu App</label>
                             <input type='file' accept="img/*" name="app-img" id="app-img" />
                         </div>
@@ -70,7 +57,7 @@
                 </div>
                 <div class="flex flex-col">
                     <label for="description" class="leading-loose">Descripcion</label>
-                    <textarea name="description" id="description" class="px-4 py-2 border w-full sm:text-sm border-gray-300 rounded-md" placeholder="Algo interesante sobre mi app..." cols="30" rows="5">{{old('description')}}</textarea>
+                    <textarea name="description" id="description" class="px-4 py-2 border w-full border-gray-300 rounded-md" placeholder="Algo interesante sobre mi app..." cols="30" rows="5">{{old('description')}}</textarea>
                 </div>
                 </div>
                 <div class="pt-4 flex items-center justify-center space-x-4">
