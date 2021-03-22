@@ -16,6 +16,7 @@
     <div class="max-w-7xl mx-auto flex justify-around flex-wrap items-center py-6 px-4 sm:px-6 lg:px-8">
 
         <x-shop-card class="animate__animated animate__flipInX"
+            :id="$app_show->id"
             :name="$app_show->name"
             :description="$app_show->description"
             :category="$app_show->getCategory->name"

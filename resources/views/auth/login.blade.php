@@ -27,12 +27,12 @@
 
                     <div class="flex flex-col pt-4">
                         <label for="email" class="text-lg">Correo Electronico</label>
-                        <input type="email" name="email" id="email" placeholder="tucorreo@email.com" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline" :value="old('email')" required autofocus>
+                        <input type="email" name="email" id="email" placeholder="tucorreo@email.com" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline" value="{{old('email')}}" required autofocus>
                     </div>
     
                     <div class="flex flex-col pt-4">
                         <label for="password" class="text-lg">Contraseña</label>
-                        <input type="password" name="password" id="password" placeholder="Tucontraseña.123" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline" required autocomplete="current-password">
+                        <input type="password" name="password" id="password" value="{{old('password')}}" placeholder="Tucontraseña.123" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline" required autocomplete="current-password">
                     </div>
     
                     <input type="submit" value="Iniciar sesion" class="bg-blue-500 outline-none rounded-md w-40 mx-auto text-white font-bold text-lg transition duration-300 ease-in-out hover:bg-blue-600 p-2 mt-8 cursor-pointer">

@@ -36,19 +36,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function() {
             
             Route::get('/dashboard', [DashboardController::class,"index"])->name('dashboard');
 
-            Route::get('/development', [DevelopmentController::class,"index"])->name('development.index');
-
-            Route::post('/development', [DevelopmentController::class,"store"])->name('development.store');
-
-            Route::get('/development/{id}', [DevelopmentController::class,"show"])->name('development.show');
-
-            Route::get('/development/{id}/edit', [DevelopmentController::class,"edit"])->name('development.edit');
-
-            Route::put('/development/{id}',[DevelopmentController::class,"update"])->name('development.update');
-
-            Route::delete('/development/{id}', [DevelopmentController::class,"destroy"])->name('development.destroy');
-
-            //Route::resource('development', [DevelopmentController::class]);
+            Route::resource('development', DevelopmentController::class);
 
         });
 
@@ -58,6 +46,8 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function() {
             Route::get('/myapps', [AppsCollectionController::class,"index"])->name('myapps');
 
             Route::get('/shop',[ShopController::class,"index"])->name('shop.index');
+
+            Route::get('/shop/{app}',[ShopController::class,"show"])->name('shop.show');
         });
 
     });

@@ -28,7 +28,7 @@ class NewAppRequest extends FormRequest
             'category' => 'required|not_in:0',
             'price' => 'required|integer',
             'app-img' => 'required|image',
-            'description' => 'required|max:138'
+            'description' => 'required|max:140'
         ];
     }
 

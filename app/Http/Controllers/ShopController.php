@@ -21,4 +21,11 @@ class ShopController extends Controller
 
         return view('client.shop',compact('total_apps','categories'));
     }
+
+    public function show($app) {
+
+        $app_detail = Application::where('id',$app)->first();
+
+        return view('client.shop_detail',compact('app_detail'));
+    }
 }

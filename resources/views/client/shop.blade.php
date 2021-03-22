@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="animate__animated animate__fadeIn font-semibold text-xl text-gray-800 leading-tight">
-            Estas en el paraiso de las aplicaciones, {{auth()->user()->name}}.
+            Estas en el paraiso de las aplicaciones, {{auth()->user()->name}}
         </h2>
     </x-slot>
 
@@ -30,6 +30,7 @@
         <div class="p-8 max-w-screen-xl flex mx-auto justify-center items-center flex-wrap animate__animated animate__fadeIn">
             @foreach ($total_apps as $app)
                 <x-shop-card class="shop-card"
+                    :id="$app->id"
                     :name="$app->name"
                     :description="$app->description"
                     :category="$app->getCategory->name"

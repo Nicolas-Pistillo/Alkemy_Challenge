@@ -1,4 +1,5 @@
 @props([
+    'id',
     'name',
     'description',
     'category',
@@ -23,7 +24,7 @@
 
     @can('show_app')
         <span class="block mb-3 text-center bg-grey-lighter rounded-full px-3 py-1 text-sm font-bold italic">Creado por {{$dev}}</span>
-        <a href="#" class="bg-blue-500 flex justify-center items-center w-full text-white px-4 py-3 transition duration-300 ease-in-out cursor-pointer hover:bg-blue-600">¡Me interesa!</a>
+        <a href="{{route('shop.show',$id)}}" class="bg-blue-500 flex justify-center items-center w-full text-white px-4 py-3 transition duration-300 ease-in-out cursor-pointer hover:bg-blue-600">¡Me interesa!</a>
     @endcan
 
 </div>
