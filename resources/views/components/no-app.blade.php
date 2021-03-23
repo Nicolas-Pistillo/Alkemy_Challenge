@@ -7,7 +7,7 @@
             @endcan
 
             @can('list_apps')
-                Tu lista de deseos esta vacia, {{$name}}
+                Tu colección de apps esta vacia, {{$name}}
             @endcan
 
         </h2>

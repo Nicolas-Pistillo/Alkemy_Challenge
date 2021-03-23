@@ -8,30 +8,23 @@ use App\Http\Controllers\DevelopmentController;
 use App\Http\Controllers\ShopController;
 use App\Models\Application;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
+// HOME
 Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
+// REGISTRO
 Route::get('/register', [RegisterController::class,'index'])->name('register');
 
 Route::post('/register',[RegisterController::class,"store"])->name('register.store');
 
+// USARIOS REGISTRADOS (DEV Y CLIENTES)
 Route::middleware(['auth:sanctum', 'verified'])->group(function() {
 
     Route::prefix('me')->group(function() {
 
-        // Rutas para usuarios DEV
+        // RUTAS PARA USUARIOS DEV
         Route::middleware('devRoute')->group(function() {
             
             Route::get('/dashboard', [DashboardController::class,"index"])->name('dashboard');
@@ -40,7 +33,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function() {
 
         });
 
-        // Rutas para usuarios Cliente
+        // RUTAS PARA USUARIOS CLIENTES
         Route::middleware('clientRoute')->group(function() {
 
             Route::get('/myapps', [AppsCollectionController::class,"index"])->name('myapps');
