@@ -3802,6 +3802,8 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 __webpack_require__(/*! alpinejs */ "./node_modules/alpinejs/dist/alpine.js");
 
+__webpack_require__(/*! ./buy */ "./resources/js/buy.js");
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
@@ -3832,6 +3834,32 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     forceTLS: true
 // });
+
+/***/ }),
+
+/***/ "./resources/js/buy.js":
+/*!*****************************!*\
+  !*** ./resources/js/buy.js ***!
+  \*****************************/
+/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
+
+var _require = __webpack_require__(/*! axios */ "./node_modules/axios/index.js"),
+    axios = _require["default"];
+
+var buyButton = document.getElementById('buyApp');
+buyButton.addEventListener('click', function () {
+  axios({
+    method: 'POST',
+    url: 'http://127.0.0.1:8000/api/buy',
+    params: {
+      id: 11
+    }
+  }).then(function (data) {
+    return console.log(data.data.data);
+  })["catch"](function (err) {
+    return console.log(err);
+  });
+});
 
 /***/ }),
 

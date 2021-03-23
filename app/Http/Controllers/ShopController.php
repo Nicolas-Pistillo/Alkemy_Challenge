@@ -12,7 +12,7 @@ class ShopController extends Controller
     public function index(Application $apps, FilterCategoryRequest $search) {
 
         $total_apps = $apps->all();
-        $categories = Category::all(); // Todas las categorias para el select-option
+        $categories = Category::orderBy('name','asc')->get(); // Todas las categorias para el select-option
 
         if (isset($search->searchBy)) {
             $id_category = $search->searchBy;

@@ -19,4 +19,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::apiResource("buy",BuyController::class);
+Route::get('/buy', [BuyController::class,"index"]);
+
+Route::post('/buy', [BuyController::class,"show"]);
+
+Route::delete('/buy/{id}', [ShopController::class,"destroy"]);

@@ -4,11 +4,10 @@
             Gran eleccion, ¡esa app luce genial!
         </h2>
     </x-slot>
-
 <article>
     <div class="py-6">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6">
-            <div class="flex flex-col md:flex-row -mx-4">
+            <div class="flex flex-col items-center md:flex-row -mx-4">
                 <div class="md:flex-1 px-4">
                     <div class="h-64 md:h-80 rounded-lg bg-gray-100 mb-4 shadow-xl">
                         <div class="h-64 md:h-80 rounded-lg bg-gray-100 mb-4 flex items-center justify-center">
@@ -31,11 +30,13 @@
                         </div>
                     </div>
     
-                    <p class="text-gray-500">{{$app_detail->description}}</p>
+                    <p class="mb-3">{{$app_detail->description}}</p>
+
+                    <p class="italic text-gray-500">MyAppStore&copy; asegura la calidad de tus compras con un plazo sin cargo de 3 meses para el reembolso de tu app si esta no cumple con tus expectativas, cosa que es muy improbable ;)</p>
     
                     <div class="flex py-4 space-x-4 items-center">
                         <div class="relative">
-                            <button type="button" class="h-14 px-6 py-2 font-semibold rounded-md transition duration-300 ease-in-out bg-blue-500 hover:bg-blue-600 text-white">
+                            <button style="outline: none;" type="button" id="buyApp" class="h-14 px-6 py-2 font-semibold rounded-md transition duration-300 ease-in-out bg-blue-500 hover:bg-blue-600 text-white">
                             Comprar
                             </button>
                         </div>
