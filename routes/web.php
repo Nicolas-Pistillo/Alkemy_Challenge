@@ -38,9 +38,12 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function() {
 
             Route::get('/myapps', [AppsCollectionController::class,"index"])->name('myapps');
 
+            Route::get('/myapps/{app}', [AppsCollectionController::class,"show"])->name('myapps.show');
+
             Route::get('/shop',[ShopController::class,"index"])->name('shop.index');
 
             Route::get('/shop/{app}',[ShopController::class,"show"])->name('shop.show');
+
         });
 
     });

@@ -4,11 +4,12 @@
     'name',
     'date',
     'category',
-    'description'
+    'description',
+    'id'
 ])
 
 <div class="w-80 m-4">
-    <div style="height: 30rem;" class="grid grid-cols-3 grid-rows-7 grid-flow-row overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out">
+    <div style="height: 32rem;" class="grid grid-cols-3 grid-rows-7 grid-flow-row overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out">
         <div class="col-span-3 row-span-4 p-1 m-1">
             <img src="{{$img}}" alt="Placeholder" class="rounded-t-xl object-cover h-48 w-full"/>
         </div>
@@ -48,5 +49,12 @@
                 </li>
             </ul>
         </div>
+
+        @if (!request()->routeIs('myapps.show'))
+            <div class="col-span-3 row-span-1">
+                <a href="{{route('myapps.show',$id)}}" class="bg-blue-500 h-full flex justify-center items-center w-full text-white px-4 py-3 transition duration-300 ease-in-out cursor-pointer hover:bg-blue-600">Ver detalles</a>
+            </div>                
+        @endif
+
     </div>
 </div>

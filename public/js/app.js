@@ -3804,6 +3804,8 @@ __webpack_require__(/*! alpinejs */ "./node_modules/alpinejs/dist/alpine.js");
 
 __webpack_require__(/*! ./buy */ "./resources/js/buy.js");
 
+__webpack_require__(/*! ./reembolse */ "./resources/js/reembolse.js");
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
@@ -3865,6 +3867,16 @@ function callAPI() {
     return console.log(err);
   });
 }
+
+/***/ }),
+
+/***/ "./resources/js/reembolse.js":
+/*!***********************************!*\
+  !*** ./resources/js/reembolse.js ***!
+  \***********************************/
+/***/ (() => {
+
+
 
 /***/ }),
 

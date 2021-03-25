@@ -37,7 +37,7 @@ class BuyController extends ApiController
 
     }
 
-    public function destroy() {
-
+    public function destroy(Request $req) {
+        return "funcando";
     }
 }

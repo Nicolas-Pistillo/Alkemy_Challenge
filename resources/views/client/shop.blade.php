@@ -5,7 +5,7 @@
         </h2>
     </x-slot>
 
-        <form class="mx-auto mt-4 w-max flex flex-col justify-center items-center">
+        <form class="mx-auto my-4 w-max flex flex-col justify-center items-center">
             @csrf
             <label for="search">Filtrar categoria
                 @error('searchBy')
@@ -27,7 +27,11 @@
 
         </form>
 
-        <div class="p-8 max-w-screen-xl flex mx-auto justify-center items-center flex-wrap animate__animated animate__fadeIn">
+        @if (!isset($id_category))
+            {{ $total_apps->links() }}
+        @endif
+
+        <div class="p-4 max-w-screen-xl flex mx-auto justify-center items-center flex-wrap animate__animated animate__fadeIn">
             @if (count($total_apps) != 0)
                 @foreach ($total_apps as $app)
                     <x-shop-card class="shop-card"
@@ -42,7 +46,6 @@
                 @endforeach
                 </div>
             @else
-                <!-- This is an example component -->
                 <div class="h-full w-full flex items-center">
                     <div class="container flex flex-col mx-auto md:flex-row items-center justify-center px-5 text-gray-700">
                         <div class="max-w-md">

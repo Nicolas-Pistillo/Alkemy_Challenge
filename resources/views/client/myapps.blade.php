@@ -20,7 +20,8 @@
                     :name="$appBuy->getApp->name"
                     :date="$newDate"
                     :category="$appBuy->getApp->getCategory->name"
-                    :description="$appBuy->getapp->description"
+                    :description="$appBuy->getApp->description"
+                    :id="$appBuy->getApp->id"
                 />
             @endforeach
         @else
