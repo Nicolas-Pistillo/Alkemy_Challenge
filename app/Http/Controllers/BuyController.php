@@ -5,27 +5,36 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Application;
 use App\Http\Controllers\ApiController;
+use App\Models\Buy;
 
 class BuyController extends ApiController
 {
-    public function index(Application $app) {
-        $apps = $app->all();
 
-        return $this->sendResponse($apps,"Que disfrutes de las aplicaciones");
-    }
+    public function store(Request $req) {
 
-    public function show(Request $app) {
-        $find = $app->id;
+        // Se recupera el ID de la aplicacion enviado desde AJAX y el usuario que realizo la petición
+
+        $find = $req->id;
+
+        $user = $req->user()->id;
 
         $app_return = Application::where('id',$find)->first();
+
+        // Si no existe una aplicacion con ese ID, se devuelve un JSON con el error
 
         if (!$app_return) {
             return $this->sendError($app_return,"No se ha encontrado una aplicacion con esas credenciales");
         }
 
-        $dev = $app_return->developer->name;
+        // Si la aplicacion existe, se guarda en la tabla "buys" su ID junto con el ID del usuario que realizo la peticion ajax
 
-        return $this->sendResponse($app_return,"Que disfrutes tu aplicacion");
+        $new_buy = Buy::create([
+            'client' => $user,
+            'app' => $find
+        ]);
+
+        return $this->sendResponse($new_buy,"Añadido con exito");
+
     }
 
     public function destroy() {

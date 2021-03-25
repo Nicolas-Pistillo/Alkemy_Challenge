@@ -5,7 +5,7 @@
     'id'
 ])
 
-<div class="app-dev-card shadow-lg group container m-4 rounded-md bg-white max-w-sm flex justify-center items-center hover:shadow-xl">
+<div class="app-dev-card shadow-lg group container m-4 rounded-md bg-white w-80 flex justify-center items-center hover:shadow-xl">
     <div>
         <div class="w-full h-48 rounded-t-md object-cover" >
             <img class="w-full h-full rounded-t-md object-cover" src="{{$img}}" alt="{{$name}}-img">

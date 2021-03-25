@@ -3846,20 +3846,25 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 var _require = __webpack_require__(/*! axios */ "./node_modules/axios/index.js"),
     axios = _require["default"];
 
+var idApp = document.getElementById('buyApp').dataset.id;
 var buyButton = document.getElementById('buyApp');
-buyButton.addEventListener('click', function () {
+buyButton.addEventListener('click', callAPI, true);
+
+function callAPI() {
   axios({
     method: 'POST',
     url: 'http://127.0.0.1:8000/api/buy',
     params: {
-      id: 11
+      'id': idApp
     }
   }).then(function (data) {
-    return console.log(data.data.data);
+    console.log(data);
+    buyButton.removeEventListener('click', callAPI, true);
+    buyButton.innerHTML = data.data.message;
   })["catch"](function (err) {
     return console.log(err);
   });
-});
+}
 
 /***/ }),
 

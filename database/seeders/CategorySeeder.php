@@ -28,7 +28,7 @@ class CategorySeeder extends Seeder
         ]);
 
         Category::create([
-            'name' => 'Accion'
+            'name' => 'Redes Sociales'
         ]);
 
         Category::create([
@@ -41,6 +41,10 @@ class CategorySeeder extends Seeder
 
         Category::create([
             'name' => 'Peliculas'
+        ]);
+
+        Category::create([
+            'name' => 'Tecnología'
         ]);
     }
 }

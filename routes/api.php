@@ -19,8 +19,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/buy', [BuyController::class,"index"]);
-
-Route::post('/buy', [BuyController::class,"show"]);
+Route::post('/buy', [BuyController::class,"store"])->middleware('auth:sanctum');
 
 Route::delete('/buy/{id}', [ShopController::class,"destroy"]);

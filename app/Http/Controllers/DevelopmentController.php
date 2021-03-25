@@ -53,17 +53,23 @@ class DevelopmentController extends Controller
     }
 
     public function update(UpdateAppRequest $app_update, $edit_app) {
-        $imagen = $app_update->file('app-img')->store('public/apps_img');
-
-        $url = Storage::url($imagen);
 
         $app_given = Application::where('id',$edit_app)->first();
 
+        $url = str_replace('storage','public',$app_given->logo_url);
+        Storage::delete($url);
+
+        $newImage = $app_update->file('app-img')->store('public/apps_img');
+
+        $urlNew = Storage::url($newImage);
+
         $app_given->price = $app_update->price;
         $app_given->description = $app_update->description;
-        $app_given->logo_url = $url;
+        $app_given->logo_url = $urlNew;
 
         $app_given->save();
+
+        $id = $app_update->id;
 
         return redirect()->route("development.show","$edit_app")->with('updatedOK','updated');
     }
@@ -71,6 +77,9 @@ class DevelopmentController extends Controller
     public function destroy($app) {
 
         $delete_app = Application::where('id',$app)->first();
+
+        $url = str_replace('storage','public',$delete_app->logo_url);
+        Storage::delete($url);
 
         $delete_app->delete();
 

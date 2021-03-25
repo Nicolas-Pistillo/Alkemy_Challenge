@@ -23,7 +23,7 @@
     
                     <div class="flex items-center space-x-4 my-4">
                         <div>
-                            <div class="rounded-lg bg-gray-100 flex py-2 px-3">
+                            <div class="rounded-lg flex py-2 px-3">
                                 <span class="text-green-500 mr-1 mt-1">$</span>
                                 <span class="font-bold text-green-500 text-3xl">{{$app_detail->price}}</span>
                             </div>
@@ -36,18 +36,20 @@
     
                     <div class="flex py-4 space-x-4 items-center">
                         <div class="relative">
-                            <button style="outline: none;" type="button" id="buyApp" class="h-14 px-6 py-2 font-semibold rounded-md transition duration-300 ease-in-out bg-blue-500 hover:bg-blue-600 text-white">
+                            <button style="outline: none;" type="button" id="buyApp" data-id="{{$app_detail->id}}" class="h-14 px-6 py-2 font-semibold rounded-md transition duration-300 ease-in-out bg-blue-500 hover:bg-blue-600 text-white">
                             Comprar
                             </button>
                         </div>
                         <div class="relative">
-                            <a href="{{route('shop.index')}}" class="block bg-gray-500 w-max rounded-md mx-auto outline-none font-bold text-white text-center px-6 py-4 transition duration-300 ease-in-out hover:bg-gray-600 cursor-pointer">Seguir comprando</a>
+                            <a href="{{route('shop.index')}}" class="block bg-gray-500 w-max rounded-md mx-auto outline-none font-bold text-white text-center px-6 py-4 transition duration-300 ease-in-out hover:bg-gray-600 cursor-pointer">Volver a tienda</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
 </article>
+
 
 </x-app-layout>
