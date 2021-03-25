@@ -18,6 +18,7 @@ class RegisterController extends Controller
 
         $succesUser = User::create($succesUser->all());
         $succesUser->assignRole($role);
+        $succesUser->createToken('user_token');
 
         return view('register',compact('succesUser'));
     }

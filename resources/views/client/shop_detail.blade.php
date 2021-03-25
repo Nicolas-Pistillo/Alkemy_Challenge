@@ -5,7 +5,7 @@
         </h2>
     </x-slot>
 <article>
-    <div class="py-6">
+    <div class="py-6 animate__animated animate__fadeIn">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6">
             <div class="flex flex-col items-center md:flex-row -mx-4">
                 <div class="md:flex-1 px-4">
@@ -23,7 +23,7 @@
     
                     <div class="flex items-center space-x-4 my-4">
                         <div>
-                            <div class="rounded-lg bg-gray-100 flex py-2 px-3">
+                            <div class="rounded-lg flex py-2 px-3">
                                 <span class="text-green-500 mr-1 mt-1">$</span>
                                 <span class="font-bold text-green-500 text-3xl">{{$app_detail->price}}</span>
                             </div>
@@ -35,19 +35,30 @@
                     <p class="italic text-gray-500">MyAppStore&copy; asegura la calidad de tus compras con un plazo sin cargo de 3 meses para el reembolso de tu app si esta no cumple con tus expectativas, cosa que es muy improbable ;)</p>
     
                     <div class="flex py-4 space-x-4 items-center">
+
                         <div class="relative">
-                            <button style="outline: none;" type="button" id="buyApp" class="h-14 px-6 py-2 font-semibold rounded-md transition duration-300 ease-in-out bg-blue-500 hover:bg-blue-600 text-white">
-                            Comprar
-                            </button>
+
+                            @if (!$has_the_app)
+                                <button style="outline: none;" type="button" id="buyApp" data-id="{{$app_detail->id}}" class="h-14 px-6 py-2 font-semibold rounded-md transition duration-300 ease-in-out bg-blue-500 hover:bg-blue-600 text-white">
+                                Comprar
+                                </button>
+
+                            @else 
+                                <p class="text-yellow-500">¡Ya tienes esta App!</p>
+                            @endif
+
                         </div>
+
                         <div class="relative">
-                            <a href="{{route('shop.index')}}" class="block bg-gray-500 w-max rounded-md mx-auto outline-none font-bold text-white text-center px-6 py-4 transition duration-300 ease-in-out hover:bg-gray-600 cursor-pointer">Seguir comprando</a>
+                            <a href="{{route('shop.index')}}" class="block bg-gray-500 w-max rounded-md mx-auto outline-none font-bold text-white text-center px-6 py-4 transition duration-300 ease-in-out hover:bg-gray-600 cursor-pointer">Volver a tienda</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
 </article>
+
 
 </x-app-layout>
