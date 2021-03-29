@@ -26,7 +26,7 @@ class RegisterNewUser extends FormRequest
         return [
             'name' => 'required',
             'surname' => 'required',
-            'email' => 'required',
+            'email' => 'required|unique:users',
             'alias' => 'required|unique:users',
             'password' => 'required|min:10|confirmed',
             'type_user' => 'required'
@@ -41,6 +41,7 @@ class RegisterNewUser extends FormRequest
             'alias.required' => 'Necesitas un alias cool!',
             'alias.unique' => 'Ese alias ya esta en uso!',
             'email.required' => 'Debes especificar tu correo electronico',
+            'email.unique' => 'El correo electronico ya esta en uso',
             'password.required' => 'La contraseña no puede estar vacia',
             'password.min' => 'La contraseña debe tener al menos 10 caracteres',
             'password.confirmed' => 'Las contraseñas no coinciden',
