@@ -1,19 +1,18 @@
 <x-guest-layout>
         
-    <div class="main-login w-full flex flex-wrap overflow-hidden">
+    <div class="main-login w-full min-h-screen items-center md:items-start flex flex-wrap overflow-hidden">
 
         <!-- Login Section -->
-        <div class="w-full login-form-container md:w-1/2 flex flex-col bg-b">
+        <div class="w-full md:w-1/2 flex flex-col">
 
-            <div class="flex justify-center md:justify-start pt-12 md:pl-12 md:-mb-24">
-                <a href="{{route('home')}}" class="brand-login font-bold text-4xl text-blue-500 cursor-pointer"
-                ><span class="material-icons">
-                    subdirectory_arrow_left
-                </span> Home</a>
+            <div class="flex mb-4 justify-center md:justify-start md:pt-12 md:pl-12" title="Volver a inicio">
+                <a href="{{route('home')}}" class="brand-login font-bold text-4xl text-blue-500 cursor-pointer">
+                    <img src="{{asset('img/app-favicon.png')}}" width="55" height="55" />
+                </a>
             </div>
 
-            <div class="flex flex-col animate__animated animate__fadeInUp justify-center md:justify-start my-auto pt-8 md:pt-0 px-8 md:px-8 lg:px-32">
-                <p class="text-center text-3xl">Bienvenido nuevamente, por favor, ingrese sus credenciales</p>
+            <div class="flex flex-col animate__animated animate__bounceInLeft justify-center md:justify-start pt-8 md:pt-0 px-8 md:px-10 md:mt-40 lg:px-20">
+                <p class="text-center text-3xl mb-2">Bienvenido nuevamente, por favor, ingrese sus credenciales</p>
 
                 @if (session('status'))
                     <div class="mb-4 font-medium text-sm text-green-600">
@@ -46,8 +45,8 @@
         </div>
 
         <!-- Image Section -->
-        <div class="w-1/2 shadow-2xl">
-            <img class="object-cover w-full h-screen hidden md:block" src="{{asset('img/login/man-img-login.jpg')}}">
+        <div class="hidden md:block md:w-1/2 shadow-2xl">
+            <img class="object-cover w-full h-screen" src="{{asset('img/login/login-img.jpg')}}">
         </div>
     </div>
 

@@ -57,9 +57,9 @@ $color_dark: #121212;
 
 .main-login {
     color: #444;
-    .login-form-container {
-        background: #f0f0f0;
-    }
+    background: #C9D6FF;
+    background: -webkit-linear-gradient(to top, #E2E2E2, #C9D6FF);
+    background: linear-gradient(to top, #E2E2E2, #C9D6FF); 
 }
 
 // REGISTER 
@@ -86,3 +86,11 @@ $color_dark: #121212;
     background-color: #222;
     color: #fff;
 }
+
+// DEV-EDIT 
+
+@media (max-width: 635px) {
+    .info-edit-wraper {
+        width: 100%;
+    }
+} 
