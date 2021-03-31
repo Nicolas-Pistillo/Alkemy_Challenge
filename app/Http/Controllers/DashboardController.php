@@ -13,12 +13,8 @@ class DashboardController extends Controller
 
     public function index() {
 
-        // Obtener usuarios que tengan apps $appsDev = $dev::with('apps')->get();
+        $appsDev = auth()->user()->apps;
 
-        $dev = auth()->user();
-
-        $appsDev = $dev->apps;
-
-        return view('dev.dashboard',compact('appsDev','dev'));
+        return view('dev.dashboard',compact('appsDev'));
     }
 }

@@ -44,7 +44,7 @@
                                 </button>
 
                             @else 
-                                <p class="text-yellow-500">¡Ya tienes esta App!</p>
+                                <p class="text-red-500">¡Ya tienes esta App!</p>
                             @endif
 
                         </div>

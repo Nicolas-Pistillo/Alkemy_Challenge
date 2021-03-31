@@ -14,7 +14,7 @@
             @endif
 
             @if (isset($appsDev[0]))
-                <div class="p-24 animate__animated animate__fadeIn flex flex-wrap items-center justify-center">
+                <div class="p-10 md:p-24 animate__animated animate__fadeIn flex flex-wrap items-center justify-center">
                     @foreach ($appsDev as $app)
                         <x-card-dev :name="$app->name" 
                             :category="$app->getCategory->name" 
@@ -25,7 +25,7 @@
                     @endforeach
                 </div>
             @else
-                <x-no-app :name="$dev->name" />
+                <x-no-app :name="auth()->user()->name" />
             @endif
 
 </x-app-layout>

@@ -68,7 +68,7 @@
         </div>
             
         @else
-        <div class="succes-user-container animate__animated animate__bounceIn  w-80 text-center bg-white shadow-xl rounded-xl p-8">
+        <div class="succes-user-container animate__animated animate__bounceIn  w-80 text-center bg-white shadow-xl rounded-xl p-8 m-8">
             <span class="material-icons text-white mb-3 p-1 bg-green-700 rounded-full">
                 done
             </span>
