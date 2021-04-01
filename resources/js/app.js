@@ -2,6 +2,5 @@ require('./bootstrap');
 
 require('alpinejs');
 
-require('./buy');
+require('./api_calls');
 
-require('./reembolse');

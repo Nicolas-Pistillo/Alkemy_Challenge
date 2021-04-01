@@ -10,7 +10,7 @@
 
 <div class="w-80 m-4">
     <div style="height: 32rem;" class="grid grid-cols-3 grid-rows-7 grid-flow-row overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out">
-        <div class="col-span-3 row-span-4 p-1 m-1">
+        <div class="col-span-3 p-1 m-1">
             <img src="{{$img}}" alt="Placeholder" class="rounded-t-xl object-cover h-48 w-full"/>
         </div>
 
@@ -43,7 +43,7 @@
         <div class="col-span-3 row-span-1">
             <ul class="flex flex-row px-4 text-gray-600">
                 <li class="py-1">
-                    <div class="transition duration-300 ease-in-out rounded-2xl mr-1 px-2 py-1 hover:bg-blue-200 text-gray-500 hover:text-gray-800">
+                    <div class="rounded-2xl mr-1 px-2 py-1 bg-blue-200 text-gray-800">
                         <span>#{{$category}}</span>
                     </div>
                 </li>

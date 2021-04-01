@@ -11,7 +11,7 @@
             $newDate = date('d-m-Y',$oldDate);
         @endphp
 
-        <div class="animate__animated animate__backInLeft">
+        <div class="animate__animated animate__backInLeft card-detail-wrapper">
             <x-bought-app 
                 :img="$app_show->logo_url"
                 :dev="$app_show->developer->alias"
@@ -22,9 +22,10 @@
             />
         </div>
 
-        <div class="client-app-actions">
-            <button id="reembolse" data-destroy="{{$app_show->id}}" type="submit" class="bg-red-500 w-44 block my-3 text-center text-white px-4 py-3 rounded-md transition duration-300 ease-in-out cursor-pointer hover:bg-red-600" title="Eliminar">
-                <span class="material-icons">delete</span> <br> ¡Quiero un reembolso!
+        <div class="client-app-actions relative mt-4">
+            <span class="material-icons delete-icon absolute text-red-400 -top-1 left-1/2">delete</span>
+            <button id="reembolse" data-destroy="{{$app_show->id}}" type="submit" class="bg-red-500 w-44 block my-3 text-center text-white px-4 py-3 rounded-md transition duration-300 ease-in-out cursor-pointer hover:bg-red-600 animate__animated" title="Eliminar">
+                ¡Quiero un reembolso!
             </button>
         </div>
     </div>

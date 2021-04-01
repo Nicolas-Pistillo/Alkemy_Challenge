@@ -3792,6 +3792,67 @@ module.exports = {
 
 /***/ }),
 
+/***/ "./resources/js/api_calls.js":
+/*!***********************************!*\
+  !*** ./resources/js/api_calls.js ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
+
+var _require = __webpack_require__(/*! axios */ "./node_modules/axios/index.js"),
+    axios = _require["default"];
+
+var _require2 = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js"),
+    isNull = _require2.isNull;
+
+if (!isNull(document.getElementById('buyApp'))) {
+  var callApiBuy = function callApiBuy() {
+    axios({
+      method: 'POST',
+      url: 'http://127.0.0.1:8000/api/buy',
+      params: {
+        'id': idApp
+      }
+    }).then(function (data) {
+      console.log(data);
+      buyButton.removeEventListener('click', callApiBuy, true);
+      buyButton.innerHTML = data.data.message;
+    })["catch"](function (err) {
+      return console.log(err);
+    });
+  };
+
+  var buyButton = document.getElementById('buyApp');
+  var idApp = document.getElementById('buyApp').dataset.id;
+  buyButton.addEventListener('click', callApiBuy, true);
+} else if (!isNull(document.getElementById('reembolse'))) {
+  var callApiDelete = function callApiDelete() {
+    axios({
+      method: 'DELETE',
+      url: 'http://127.0.0.1:8000/api/reembolse',
+      params: {
+        'id': _idApp
+      }
+    }).then(function (data) {
+      console.log(data);
+      deleteBtn.removeEventListener('click', callApiDelete, true);
+      deleteBtn.innerHTML = data.data.message;
+      deleteBtn.classList.add('deleted-app');
+      deleteBtn.classList.add('animate__tada');
+      var card = document.querySelector('.card-detail-wrapper');
+      card.classList.add('animate__backOutLeft');
+      document.querySelector('.delete-icon').style.display = 'none';
+    })["catch"](function (err) {
+      return console.log(err);
+    });
+  };
+
+  var deleteBtn = document.getElementById('reembolse');
+  var _idApp = document.getElementById('reembolse').dataset.destroy;
+  deleteBtn.addEventListener('click', callApiDelete, true);
+}
+
+/***/ }),
+
 /***/ "./resources/js/app.js":
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
@@ -3802,9 +3863,7 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 __webpack_require__(/*! alpinejs */ "./node_modules/alpinejs/dist/alpine.js");
 
-__webpack_require__(/*! ./buy */ "./resources/js/buy.js");
-
-__webpack_require__(/*! ./reembolse */ "./resources/js/reembolse.js");
+__webpack_require__(/*! ./api_calls */ "./resources/js/api_calls.js");
 
 /***/ }),
 
@@ -3836,47 +3895,6 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     forceTLS: true
 // });
-
-/***/ }),
-
-/***/ "./resources/js/buy.js":
-/*!*****************************!*\
-  !*** ./resources/js/buy.js ***!
-  \*****************************/
-/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
-
-var _require = __webpack_require__(/*! axios */ "./node_modules/axios/index.js"),
-    axios = _require["default"];
-
-var idApp = document.getElementById('buyApp').dataset.id;
-var buyButton = document.getElementById('buyApp');
-buyButton.addEventListener('click', callAPI, true);
-
-function callAPI() {
-  axios({
-    method: 'POST',
-    url: 'http://127.0.0.1:8000/api/buy',
-    params: {
-      'id': idApp
-    }
-  }).then(function (data) {
-    console.log(data);
-    buyButton.removeEventListener('click', callAPI, true);
-    buyButton.innerHTML = data.data.message;
-  })["catch"](function (err) {
-    return console.log(err);
-  });
-}
-
-/***/ }),
-
-/***/ "./resources/js/reembolse.js":
-/*!***********************************!*\
-  !*** ./resources/js/reembolse.js ***!
-  \***********************************/
-/***/ (() => {
-
-
 
 /***/ }),
 
