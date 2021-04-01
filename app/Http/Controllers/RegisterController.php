@@ -16,9 +16,17 @@ class RegisterController extends Controller
     public function store(RegisterNewUser $succesUser) {
         $role = $succesUser->type_user;
 
-        $succesUser = User::create($succesUser->all());
+        $succesUser->password = bcrypt($succesUser->password);
+
+        $succesUser = User::create([
+            'name' => $succesUser->name,
+            'surname' => $succesUser->surname,
+            'alias' => $succesUser->alias,
+            'email' => $succesUser->email,
+            'password' => $succesUser->password
+        ]);
+
         $succesUser->assignRole($role);
-        $succesUser->createToken('user_token');
 
         return view('register',compact('succesUser'));
     }

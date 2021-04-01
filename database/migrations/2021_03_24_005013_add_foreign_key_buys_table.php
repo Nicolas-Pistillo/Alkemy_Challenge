@@ -15,10 +15,10 @@ class AddForeignKeyBuysTable extends Migration
     {
         Schema::table('buys', function (Blueprint $table) {
             $table->unsignedBigInteger('client')->after('id');
-            $table->foreign('client')->references('id')->on('users');
+            $table->foreign('client')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             
             $table->unsignedBigInteger('app')->after('client');
-            $table->foreign('app')->references('id')->on('applications');
+            $table->foreign('app')->references('id')->on('applications')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

@@ -1,4 +1,4 @@
-<div class="flex bg-gray-100 py-24 justify-center">
+<div class="flex bg-gray-100 py-24 px-4 justify-center">
     <div class="text-center max-w-2xl">
         <h2 class="md:text-3xl text-3xl font-bold">
 
