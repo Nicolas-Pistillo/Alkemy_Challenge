@@ -87,6 +87,22 @@ $color_dark: #121212;
     color: #fff;
 }
 
+// CLIENT APP DETAIL
+
+.delete-icon {
+    transform: translate(-50%,-50%);
+    font-size: 32px !important;
+}
+
+.deleted-app {
+    background-color: #222;
+    font-weight: bold;
+    transition: none;
+    &:hover {
+        background-color: #121212;
+    }
+}
+
 // DEV-EDIT 
 
 @media (max-width: 635px) {

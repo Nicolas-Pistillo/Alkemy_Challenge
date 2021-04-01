@@ -7,7 +7,7 @@ use App\Models\Application;
 use App\Http\Controllers\ApiController;
 use App\Models\Buy;
 
-class BuyController extends ApiController
+class AjaxController extends ApiController
 {
 
     public function store(Request $req) {
@@ -38,6 +38,16 @@ class BuyController extends ApiController
     }
 
     public function destroy(Request $req) {
-        return "funcando";
+
+        $appToDelete = Buy::where('client',$req->user()->id)
+        ->where('app',$req->get('id'))->first();
+
+        if (!$appToDelete) {
+            return $this->sendError('NULL given',"No se ha encontrado una aplicación correspondiente al usuario registrado");
+        }
+
+        $appToDelete->delete();
+
+        return $this->sendResponse($appToDelete,"Aplicación eliminada");
     }
 }
