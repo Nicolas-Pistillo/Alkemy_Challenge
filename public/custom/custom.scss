@@ -31,7 +31,6 @@ $color_dark: #121212;
 // WELCOME - SECTION
 
 .welcome-section {
-    background-color: $color_dark;
     .about-info-section, .about-img-section {
         height: 35rem;
     }
@@ -49,6 +48,21 @@ $color_dark: #121212;
     &:nth-child(3) {
         .about-img-section > img {
             object-position: right;
+        }
+    }
+}
+
+@media (max-width:660px) {
+    .welcome-section,.welcome-section:nth-child(2) {
+        display: block;
+        .about-img-section {
+            clip-path: unset;
+            width: 90%;
+            margin: 0 auto;
+            padding-top: 4rem;
+            img {
+                border-radius: 8px;
+            }
         }
     }
 }
