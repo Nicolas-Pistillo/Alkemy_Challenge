@@ -35,6 +35,5 @@ class DatabaseSeeder extends Seeder
         $permission5->assignRole($client);
         $permission6->assignRole($client);
 
-
     }
 }

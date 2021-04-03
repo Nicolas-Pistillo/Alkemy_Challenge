@@ -53,6 +53,21 @@ $color_dark: #121212;
     }
 }
 
+@media (max-width:660px) {
+    .welcome-section,.welcome-section:nth-child(2) {
+        display: block;
+        .about-img-section {
+            clip-path: unset;
+            width: 90%;
+            margin: 0 auto;
+            padding-top: 4rem;
+            img {
+                border-radius: 8px;
+            }
+        }
+    }
+}
+
 // LOGIN 
 
 .main-login {
